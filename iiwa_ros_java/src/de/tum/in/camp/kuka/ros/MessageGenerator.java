@@ -95,7 +95,7 @@ public class MessageGenerator {
 		Transformation transform = robot.getCurrentCartesianPosition(frame).transformationFromWorld();
 
 		currentPose.getHeader().setFrameId(baseFrameID);  
-		currentPose.getHeader().setStamp(time.getCurrentTime());
+		//currentPose.getHeader().setStamp(time.getCurrentTime());
 
 		Conversions.kukaTransformationToRosPose(transform, currentPose.getPose());
 	}
@@ -122,7 +122,7 @@ public class MessageGenerator {
 	 */
 	public void getCurrentCartesianWrench(geometry_msgs.WrenchStamped currentWrench, LBR robot, ObjectFrame frame) {
 		currentWrench.getHeader().setFrameId(frame.getName());
-		currentWrench.getHeader().setStamp(time.getCurrentTime());
+		//currentWrench.getHeader().setStamp(time.getCurrentTime());
 
 		currentWrench.getWrench().getForce().setX(robot.getExternalForceTorque(frame).getForce().getX());
 		currentWrench.getWrench().getForce().setY(robot.getExternalForceTorque(frame).getForce().getY());
