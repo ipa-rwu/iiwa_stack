@@ -228,6 +228,9 @@ public abstract class ROSBaseApplication extends RoboticsAPIApplication {
 
 				if ((decimationCounter % controlDecimation) == 0)
 					controlLoop();  // Perform control loop specified by subclass
+				
+				// Wait a moment
+				TimeUnit.MILLISECONDS.sleep(20);
 			} 
 		}
 		catch (Exception e) {
